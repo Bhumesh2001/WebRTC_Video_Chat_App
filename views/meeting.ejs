@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoChat</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="meet.css">
+</head>
+
+<body style="background-color: #222f3e">
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center position-relative" id="video-div">
+                <video id="video-container" class="border border-white rounded mt-3"></video>
+                <video id="video-container2" class="position-absolute fixed-left border border-white rounded"></video>
+            </div>
+        </div>
+        <div class="row pt-3" id="btn" style="margin-top: 1%;">
+            <div class="col d-flex justify-content-center gap-2 align-items-center">
+                <button class="small-circle-btn" id="microphone-btn" type="button" style="background-color: #34495e">
+                    <i id="Mic" class="bi bi-mic-fill text-white"></i>
+                </button>
+
+                <button class="small-circle-btn" id="camera-btn" type="button" style="background-color: #34495e">
+                    <i id="Video" class="bi bi-camera-video text-white"></i>
+                </button>
+
+                <button class="small-circle-btn btn" id="message-btn" type="button" style="background-color: #34495e;"
+                    data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                    <i id="Mesg" class="bi bi-chat-left-text text-white"></i>
+                </button>
+
+                <button class="small-circle-btn btn" id="screen-btn" type="button" style="background-color: #34495e;">
+                    <i id="Screen" class="bi bi-display text-white"></i>
+                </button>
+
+                <button class="small-circle-btn" id="record-btn" type="button" style="background-color: #34495e;">
+                    <i id="Record" class="bi bi-record-btn text-white"></i>
+                </button>
+
+                <button class="btn btn-dark small-circle-btn d-flex justify-content-center align-items-center bg-danger"
+                    id="call-btn" type="button">
+                    <img src="hang-up.svg" alt="svg" style="width: 30px; height:30px;" draggable="false">
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="offcanvas offcanvas-end rounded" data-bs-backdrop="false" id="staticBackdrop"
+                    aria-labelledby="staticBackdropLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="staticBackdropLabel">In-call messages</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body position-relative">
+                        <div class="heading1">
+                            <h6 class="p-2 rounded" style="background-color: #f1f3f4; font-size: small;">Let send
+                                messages</h6>
+                        </div>
+                        <div class="heading2 pt-3">
+                            <p class="rounded p-2 text-center" style="background-color: #f1f3f4; font-size: small;">
+                                Messages can be seen only by people in the call and are deleted when the call ends
+                            </p>
+                        </div>
+                        <div class="input-text position-absolute bottom-0 start-50 translate-middle-x mb-3"
+                            style="width: 90%;">
+                            <input class="p-3 form-control no-outline rounded-5" type="text"
+                                placeholder="Send a message" style="background-color: #f1f3f4;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
